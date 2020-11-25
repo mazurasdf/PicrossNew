@@ -3,7 +3,7 @@ import React from 'react';
 const RowHint = (props) => {
     return(
         <>
-            horizontal hint
+            {props.hints.map((hint, i) => hint)}
         </>
     )
 }

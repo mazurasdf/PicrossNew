@@ -6,7 +6,9 @@ const SinglePuzzle = (props) => {
     const [puzzle, setPuzzle] = useState({
         xSize: 5,
         ySize: 5,
-        data: "0010100010000100111111111"
+        data: "0010100010000100111111111",
+        colHints: [[1],[2],[1,2],[4],[1,2]],
+        rowHints: [[1,1],[1],[1],[4],[5]]
     })
 
     //the matrix holding the answer
@@ -54,7 +56,7 @@ const SinglePuzzle = (props) => {
 
     return(
         <>
-            <Board puzzleState={puzzleState} onCellClick={onCellClick}/>
+            <Board puzzleState={puzzleState} onCellClick={onCellClick} colHints={puzzle.colHints} rowHints={puzzle.rowHints}/>
         </>
     )
 }

@@ -3,7 +3,6 @@ import Main from './views/Main';
 import SinglePuzzle from './views/SinglePuzzle';
 import { Router } from '@reach/router';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

@@ -3,7 +3,7 @@ import React from 'react';
 const ColHint = (props) => {
     return(
         <>
-            vert hint
+            {props.hints.map((hint, i) => hint)}
         </>
     )
 }

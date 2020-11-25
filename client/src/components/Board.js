@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Cell from './Cell';
 import ColHint from './ColHint';
 import RowHint from './RowHint';
@@ -7,11 +7,18 @@ const Board = (props) => {
 
     return(
         <>
-            <table className="table">
+            <table>
                 <tbody>
+                    <tr>
+                        <td></td>
+                        {
+                            props.colHints.map((hints, i) => <td><ColHint hints={hints} /></td>)
+                        }
+                    </tr>
                     {
                         props.puzzleState.map((row, y) => {
                             return <tr key={y}>
+                                <td><RowHint hints={props.rowHints[y]}/></td>
                                 {
                                     row.map((val, x) => {
                                         return <td key={x}>
