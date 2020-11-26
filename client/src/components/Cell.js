@@ -5,8 +5,7 @@ const Cell = (props) => {
     //val === 1 means filled
 
     return(
-        <div onClick={(e) => props.onCellClick(e, props.x, props.y)}>
-            {props.val === 0 ? "_" : "x"}
+        <div className={props.val === 0 ? "blank" : "selected"}>
         </div>
     )
 }

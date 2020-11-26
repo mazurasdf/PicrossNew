@@ -1,38 +1,78 @@
 .App {
   text-align: center;
+  padding-bottom: 60px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.square {
+  width: 35px;
+  height: 35px;
+  border: 2px solid rgb(58, 58, 58);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+table {
+  margin: auto;
+  border-collapse: collapse;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hintcol {
+  vertical-align: bottom;
 }
 
-.App-link {
-  color: #61dafb;
+.hintrow {
+  text-align: right;
+  white-space: nowrap;
+  width: 2vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  margin: 2px;
+}
+
+td {
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+}
+
+tr:hover{
+  background-color: rgba(248, 178, 26, 0.35);
+}
+
+td:hover::after { 
+  background-color: rgba(248, 178, 26, 0.35);
+  content: '\00a0';
+  height: 10000px;
+  left: 0;
+  position: absolute;  
+  top: -5000px;
+  width: 100%;
+  /* make the color appear under borders */
+  /* for some reason any numbers higher than this causes severe lag on render */
+  z-index: -1;
+}
+
+tr:nth-of-type(5n + 1) td{
+  border-bottom: 2px solid grey;
+}
+
+td:nth-of-type(5n + 1){
+  border-right: 2px solid grey;
+}
+
+.selected {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.blank {
+  background-color: none;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
